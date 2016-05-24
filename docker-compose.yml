@@ -1,0 +1,7 @@
+main:
+  build: .
+  ports:
+    - "25:25"
+  restart: always
+  environment:
+    SLACK_TOKEN: PUT_YOUR_TOKEN
