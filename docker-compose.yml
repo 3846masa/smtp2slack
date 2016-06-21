@@ -5,3 +5,4 @@ main:
   restart: always
   environment:
     SLACK_TOKEN: PUT_YOUR_TOKEN
+    PREFIX_REGEXP: slack-

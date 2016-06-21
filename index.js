@@ -5,6 +5,8 @@ const Slack = require('@slack/client')
 const config = require('config')
 
 const slack = new Slack.WebClient(config.get('slack.token'))
+const prefixRegexp =
+  new RegExp(`^${ config.get('prefix_regexp') }`)
 
 mailin.start({
   port: 25,
@@ -18,9 +20,14 @@ mailin.on('authorizeUser', () => {
 mailin.on('message', (conn, msg) => {
   console.dir(msg, { depth: null })
 
+  const hasPrefix =
+    msg.envelopeTo.some((i) => i.address.match(prefixRegexp))
+  if (!hasPrefix) return false
+
   const sentConfs =
     msg.envelopeTo.map((i) => {
-      const local = i.address.split('@')[0]
+      const local =
+        i.address.split('@')[0].replace(prefixRegexp, '')
       const [ channel, icon ] = local.split('+')
       return { channel, icon }
     })
