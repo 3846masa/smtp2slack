@@ -17,7 +17,7 @@ Inspired by [SRARAD/slack-email].
 
 If you set ``PREFIX_REGEXP``, mail address will be tested.
 
-For example, you will set ``slack-``, the address passed is ``slack-channelname@yourdomain.example.com``.
+For example, you will set ``slack-``, the address accepted is ``slack-channelname@yourdomain.example.com``.
 
 ## Bot icon
 
