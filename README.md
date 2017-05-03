@@ -1,6 +1,8 @@
 SMTP2SLACK
 ==========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/3846masa/smtp2slack.svg)](https://greenkeeper.io/)
+
 Inspired by [SRARAD/slack-email].
 
 [SRARAD/slack-email]: https://github.com/SRARAD/slack-email
